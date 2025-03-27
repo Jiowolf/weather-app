@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <script type="module" src="/src/script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Weather App</h1>
+      <div id="boxInput">
+        <input type="text" id="search" placeholder="Search for a city" />
+        <button id="searchButton">Search</button>
+      </div>
+    </header>
+    <main>
+        <div id="weatherCard">
+            <div id="dayCard">
+                <h2 id="city">City</h2>
+                <img id="icon" src="https://openweathermap.org/img/wn/${iconeCode}@2x.png" alt="Weather Icon" />
+                <p id="weather">Weather</p>
+                <p id="temperature">Temperature</p>
+                <p id="humidity">Humidity</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+  
+    </footer>
+  </body>
+</html>
