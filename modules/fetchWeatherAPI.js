@@ -1,4 +1,5 @@
 import { keyWeatherAPI } from "./sensible.js";
+import  printWeatherData  from "./printWeatherData.js";
 
 export default function fetchWeatherAPI() {
     const SEARCH_SELECT = document.querySelector('#searchButton');
@@ -6,8 +7,26 @@ export default function fetchWeatherAPI() {
 
     SEARCH_SELECT.addEventListener('click', async() => {
         let searchValue = INPUT_SEARCH_SELECT.value;
-        let response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${searchValue}&units=metric&appid=${keyWeatherAPI}`);
-        let data = await response.json();
-        console.log(data);
+
+        if (!searchValue) {
+            alert('Veuillez entrer un nom de ville.');
+            return;
+        }
+        try{
+            let response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${searchValue}&units=metric&appid=${keyWeatherAPI}`);
+
+            if (response){
+                let data = await response.json();
+            return printWeatherData(data);
+            // console.log(data);
+            } else{
+                alert('Erreur lors de la récupération des données météo.');
+                return ;
+            }
+        }catch (error) {
+            console.error('Erreur:', error);
+            alert('Erreur lors de la récupération des données météo.');
+            return;
+        }
     });
 };

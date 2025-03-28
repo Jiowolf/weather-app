@@ -1,0 +1,1 @@
+chaque carte utiliser la date comme if de rangement, use split

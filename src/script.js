@@ -1,4 +1,6 @@
-import fetchWeatherAPI from "../modules/fetchWeatherAPI";
+import fetchWeatherAPI from "../modules/fetchWeatherAPI.js";
 
-fetchWeatherAPI(); 
+fetchWeatherAPI();
+
+
 
