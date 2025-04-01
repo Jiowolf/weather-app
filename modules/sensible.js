@@ -1,1 +1,0 @@
-export let keyWeatherAPI ="44c4a2129296650263c4615acb373bc3";
