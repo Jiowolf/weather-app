@@ -1,7 +1,17 @@
 import getDateAndHourInStringToArr from "./getDateAndHourInStringToArr";
+import tempGraphData from "./tempGraphData";
 
 export default async function printWeatherData(objWeather) {
     const MAIN_SELECT = document.querySelector('main');
+
+    const GRAPH_PARENT = document.createElement('div');
+    GRAPH_PARENT.id = 'graph';
+    MAIN_SELECT.appendChild(GRAPH_PARENT);
+
+    const GRAPH_SELECT = document.createElement('canvas');
+    GRAPH_PARENT.appendChild(GRAPH_SELECT);
+
+    await tempGraphData(objWeather,GRAPH_SELECT);
 
     // const dateAndHour = await getDateAndHourInStringToArr(objWeather.list[0].dt_txt);
 
@@ -70,7 +80,7 @@ export default async function printWeatherData(objWeather) {
         DATE_SELECT.innerHTML = dateAndHour[0] ;
 
 
-        ICON_SELECT.src = `https://openweathermap.org/img/wn/${objWeather.list[0].weather[0].icon}@2x.png`;
+        ICON_SELECT.src = `https://openweathermap.org/img/wn/${objWeather.list[i].weather[0].icon}@2x.png`;
         WEATHER_SELECT.innerHTML = objWeather.list[i].weather[0].description;
         TEMPERATURE_SELECT.innerHTML = objWeather.list[i].main.temp + "°C";            HUMIDITY_SELECT.innerHTML = objWeather.list[i].main.humidity + "%";
         HOUR_SELECT.innerHTML = dateAndHour[1] ;

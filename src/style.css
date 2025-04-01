@@ -66,3 +66,28 @@ h1{
 .temperature{
     margin :10px;
 }
+
+
+@media (min-width: 1201px){
+    main{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .dayCard{
+        margin: 50px;
+        width: 500px;
+    }
+
+    .hourCard{
+        justify-content: space-around;
+    }
+
+    #graph{
+        width: 450px;
+        background-color:rgb(215, 215, 215);
+        border-radius: 15px;
+    }
+
+}

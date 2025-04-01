@@ -17,7 +17,6 @@ export default function fetchWeatherAPI() {
 
             if (response){
                 let data = await response.json();
-                console.log(data);
             return printWeatherData(data);
             } else{
                 alert('Erreur lors de la récupération des données météo.');
